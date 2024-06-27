@@ -54,6 +54,18 @@ export const navItems: INavData[] = [
    ]
   },
   {
+    name: 'Fee Management',
+    url: '/feemanagement',
+    iconComponent: { name: 'cil-save' },
+    children: [
+      {
+        name: 'Page 1',
+        url: '/theme/page1',
+        icon: 'nav-icon-bullet'
+      },
+   ]
+  },
+  {
     name: 'Colors',
     url: '/theme/colors',
     iconComponent: { name: 'cil-drop' }

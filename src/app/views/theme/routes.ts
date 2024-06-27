@@ -56,6 +56,22 @@ export const routes: Routes = [
       }
     }
   ]
+  },
+  {
+
+    path: '',
+    data:{
+      title: 'Fee Management'
+    },
+    children: [ {
+      path: 'page1',
+      loadComponent: () => import('./feemanagement/page1/page1.component').then(m => m.Page1Component),
+      data: {
+        title: 'Page 1'
+      }
+    },
+  ]
   }
+
 ];
 
