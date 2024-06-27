@@ -1,0 +1,97 @@
+
+<c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+      
+        
+          <form #searchdata="ngForm" (ngSubmit)="onSearch(searchdata)" cForm>
+            <div class="flex space-x-2">
+            <c-col cFormFloating class="mb-3" md="4">
+        
+              <select id="class" required name="class" placeholder="Select Class" ngModel #class="ngModel" cSelect>
+                <option value="K.G" >Kinder Garten</option>
+                <option value="L.K.G">L.K.G</option>
+                <option value="U.K.G">U.K.G</option>
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+                <option value="Fourth">Fourth</option>
+                <option value="Fifth">Fifth</option>
+                <option value="Sixth">Sixth</option>
+                <option value="Seventh">Seventh</option>
+                <option value="Eighth">Eighth</option>
+                <option value="Ninth">Ninth</option>
+                <option value="Tenth">Tenth</option>
+                <option value="Eleventh">Eleventh</option>
+                <option value="Twelfth">Twelfth</option>
+              </select>
+              <label cLabel>Select Class</label>
+            </c-col>
+            <c-col cFormFloating class="mb-3" md="4">   
+              <select id="section" required name="section" aria-label="Select Section" ngModel #section="ngModel" cSelect>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>  
+              </select>
+              <label cLabel>Select Section</label>    
+            </c-col>
+            <c-col cFormFloating class="mb-3" md="4">   
+              <select id="subject" required name="subject" aria-label="Select Subject" ngModel #subject="ngModel" cSelect>
+                <option value="Sub 1">Sub 1</option>
+                <option value="Sub 2">Sub 2</option>
+                <option value="Sub 3">Sub 3</option>  
+                <option value="Sub 4">Sub 4</option>  
+                <option value="Sub 5">Sub 5</option>  
+              </select>
+              <label cLabel>Select Subject</label>    
+            </c-col>
+          </div>
+          <div class="flex justify-center items-center">
+            <button cButton type="submit"  >Search</button>
+          </div>
+          </form>
+        
+      </c-card-header>
+      <c-card-body>
+        <form #attendancedata="ngForm" (ngSubmit)="onSubmit(attendancedata)" [validated]="true" cForm>
+            <table cTable>
+              <thead>
+                <tr>
+                  <th scope="col">S.no</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Roll Number</th>
+                  <th scope="col">
+                    Present 
+                    <input type="radio" name="control" value="present" required checked (change)="setAllRows('present')" />
+                  </th>
+                  <th scope="col">
+                    Absent 
+                    <input type="radio" name="control" value="absent" required (change)="setAllRows('absent')" />
+                  </th>
+                </tr>
+              </thead>
+              <tbody>             
+                  @for(item of students; track $index){
+                    <tr [cTableColor]="colorRow(attendanceData['1'])">
+                      <th scope="row">{{item.id}}</th>
+                      <td>{{item.name}}</td>
+                      <td>{{item.roll_no}}</td>
+                      <td>
+                        <input type="radio" name={{item.id}} value="present"  required [(ngModel)]="attendanceData['1']" />
+                      </td>
+                      <td>
+                      <input type="radio" name={{item.id}} value="absent" required [(ngModel)]="attendanceData['1']" />
+                    </td>
+                  </tr>
+                }          
+              </tbody>
+            </table>
+            <div class="flex justify-center item-centre mt-4" >
+              <button cButton type="submit" [disabled]="attendancedata.invalid"  colors="success">Submit</button>
+          </div>
+          </form>
+          
+        
+      </c-card-body>
+    </c-card>
+  </c-col>

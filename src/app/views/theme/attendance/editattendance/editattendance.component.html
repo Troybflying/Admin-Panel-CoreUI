@@ -1,0 +1,67 @@
+<c-col xs="12">
+    <c-card class="mb-4">
+        <c-card-header ngPreserveWhitespaces>
+
+        </c-card-header>
+        <c-card-body>
+            <form #attendancedata="ngForm" (ngSubmit)="onSubmit(attendancedata)" [validated]="true" cForm>
+                <table cTable>
+                  <thead>
+                    <tr>
+                      <th scope="col">S.no</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Roll Number</th>
+                      <th scope="col">
+                        Present 
+                      </th>
+                      <th scope="col">
+                        Absent 
+                       </th>
+                    </tr>
+                  </thead>
+                  <tbody>             
+                    
+                        <tr [cTableColor]="colorRow(attendanceData['1'])">
+                          <th scope="row">1</th>
+                          <td>Andy</td>
+                          <td>01</td>
+                          <td>
+                            <input type="radio" name=1 value="present"  required [(ngModel)]="attendanceData['1']" />
+                          </td>
+                          <td>
+                          <input type="radio" name=1 value="absent" required [(ngModel)]="attendanceData['1']" />
+                        </td>
+                        <td>
+                            <button cButton color="info" shape="rounded-pill" name='edit' >Edit</button>
+                        </td>
+                        <td>
+                            <textarea cFormControl id="comment" required name="comment" ngModel #comment="ngModel"></textarea>
+                        </td>
+                      </tr>
+                        <tr [cTableColor]="colorRow(attendanceData['2'])">
+                          <th scope="row">1</th>
+                          <td>Andy</td>
+                          <td>01</td>
+                          <td>
+                            <input type="radio" name=2 value="present"  required [(ngModel)]="attendanceData['2']" />
+                          </td>
+                          <td>
+                          <input type="radio" name=2 value="absent" required [(ngModel)]="attendanceData['2']" />
+                        </td>
+                        <td>
+                            <button cButton color="info" shape="rounded-pill" name='edit' >Edit</button>
+                        </td>
+                        <td>
+                            <textarea cFormControl id="comment" required name="comment" ngModel #comment="ngModel"></textarea>
+                        </td>
+                      </tr>
+                              
+                  </tbody>
+                </table>
+                <div class="flex justify-center item-centre mt-4" >
+                  <button cButton type="submit" [disabled]="attendancedata.invalid" colors="success">Submit</button>
+              </div>
+              </form>
+          </c-card-body>
+    </c-card>
+</c-col>

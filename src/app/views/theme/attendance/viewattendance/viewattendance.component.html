@@ -1,0 +1,78 @@
+<c-card class="mb-4">
+   
+    <c-card-header ngPreserveWhitespaces>
+      
+        
+        <form #searchdata="ngForm" (ngSubmit)="onSearch(searchdata)" cForm>
+          <div class="flex space-x-2">
+          <c-col cFormFloating class="mb-3" md="4">
+      
+            <select id="class" required name="class" placeholder="Select Class" ngModel #class="ngModel" cSelect>
+              <option value="K.G" >Kinder Garten</option>
+              <option value="L.K.G">L.K.G</option>
+              <option value="U.K.G">U.K.G</option>
+              <option value="First">First</option>
+              <option value="Second">Second</option>
+              <option value="Third">Third</option>
+              <option value="Fourth">Fourth</option>
+              <option value="Fifth">Fifth</option>
+              <option value="Sixth">Sixth</option>
+              <option value="Seventh">Seventh</option>
+              <option value="Eighth">Eighth</option>
+              <option value="Ninth">Ninth</option>
+              <option value="Tenth">Tenth</option>
+              <option value="Eleventh">Eleventh</option>
+              <option value="Twelfth">Twelfth</option>
+            </select>
+            <label cLabel>Select Class</label>
+          </c-col>
+          <c-col cFormFloating class="mb-3" md="4">   
+            <select id="section" required name="section" aria-label="Select Section" ngModel #section="ngModel" cSelect>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>  
+            </select>
+            <label cLabel>Select Section</label>    
+          </c-col>
+          <c-col cFormFloating class="mb-3" md="4">
+            
+            <button cButton type="submit"  >Search</button>
+          </c-col>
+        </div>
+        </form>   
+    </c-card-header> 
+    <c-card-body>
+        <c-row>
+
+            <c-col xs="12" lg="6">
+                <c-card class="mb-4">
+                    <c-card-header>
+                        Bar Chart
+                    </c-card-header>
+              <c-card-body>
+                  <c-chart type="bar" [data]="chartBarData" [options]="options" />
+              </c-card-body>
+            </c-card>
+        </c-col>
+        <c-col xs="12" lg="6">
+            <c-card class="mb-4">
+                <c-card-header>
+                    Pie Chart
+                </c-card-header>
+              <c-card-body>
+                <c-chart type="pie" [data]="chartPieData" [options]="options" />
+              </c-card-body>
+            </c-card>
+          </c-col>
+        </c-row>
+        <c-col xl="3" md="6" sm="6">
+            <c-widget-stat-b
+              [title]="'Name'"
+              text="Lorem ipsum dolor sit amet enim."
+              value="89.9%"
+            >
+              <c-progress class="my-2" thin [value]="89.9" color="success" />
+            </c-widget-stat-b>
+          </c-col>
+        </c-card-body>
+</c-card>
