@@ -17,25 +17,25 @@
          <label  class="font-bold" style="font-size: larger;font-family: 'Times New Roman', Times, serif;" > Student's Info</label>  
                
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl  id="fname" required type="text" name="fname" ngModel #fname="ngModel" />
+            <input cFormControl  id="fname" required maxlength="30" type="text" name="fname" ngModel #fname="ngModel" />
             <c-form-feedback [valid]="false">Please Provide First Name</c-form-feedback>
             <label cLabel for="fname">First Name*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="mname"  type="text" name="mname" ngModel #mname="ngModel" />
+            <input cFormControl id="mname" maxlength="30" type="text" name="mname" ngModel #mname="ngModel" />
             <label cLabel for="mname">Middle Name</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="lname"  type="text" name="lname" ngModel #lname="ngModel" />
-            <label cLabel for="lname">Last Name</label> 
+            <input cFormControl id="lname" maxlength="30" required type="text" name="lname" ngModel #lname="ngModel" />
+            <label cLabel for="lname">Last Name*</label> 
           </c-col>
           <c-col cFormFloating md="4">
-            <input cFormControl id="placeofbirth" required type="text" name="placeofbirth" ngModel #placeofbirth="ngModel" />
+            <input cFormControl id="placeofbirth" maxlength="30" required type="text" name="placeofbirth" ngModel #placeofbirth="ngModel" />
             <c-form-feedback [valid]="false">Please provide a valid Place.</c-form-feedback>
             <label cLabel for="placeofbirth">Place of Birth*</label> 
           </c-col>
           <c-col cFormFloating md="4">
-            <input cFormControl id="dob" required type="date" name="dob"  min="2005-01-01" max="2021-12-31" ngModel #dob="ngModel" />
+            <input cFormControl id="dob" required type="date" name="dob"  min=1950-12-31 max={{anio-3}}-12-31 ngModel #dob="ngModel" />
             <c-form-feedback [valid]="false">Please provide a valid D.O.B</c-form-feedback>
             <label cLabel for="dob">Date of Birth*</label> 
           </c-col>
@@ -43,14 +43,14 @@
           <label  class="font-bold" style="font-size: larger;font-family: 'Times New Roman', Times, serif;" > Parent's Info</label>  
           
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl  id="fathername" required type="text" name="fathername" ngModel #fathername="ngModel" />
+            <input cFormControl  id="fathername" maxlength="60" required type="text" name="fathername" ngModel #fathername="ngModel" />
             <c-form-feedback [valid]="false">Please Provide Father's Name</c-form-feedback>
             <label cLabel for="fathername">Father's Name*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl  id="fatheroccupation"  type="text" name="fatheroccupation" ngModel #fatheroccupation="ngModel" />
+            <input cFormControl cTooltip="Eg:Engineer, Doctor, Clerk, Manager etc." id="fatheroccupation" maxlength="60"  type="text" name="fatheroccupation" ngModel #fatheroccupation="ngModel"/>
             <c-form-feedback [valid]="false">Please Provide Father's Occupation</c-form-feedback>
-            <label cLabel for="fatheroccupation">Father's Occupation</label> 
+            <label cLabel for="fatheroccupation"> Father's Occupation </label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">  
             <select id="fathernationality" required name="fathernationality" ngModel #fathernationality="ngModel" cSelect>
@@ -301,12 +301,12 @@
           </c-col>
           
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl  id="mothername" required type="text" name="mothername" ngModel #mothername="ngModel" />
+            <input cFormControl  id="mothername" maxlength="60" required type="text" name="mothername" ngModel #mothername="ngModel" />
             <c-form-feedback [valid]="false">Please Provide Mother's Name</c-form-feedback>
             <label cLabel for="mothername">Mother's Name*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl  id="motheroccupation"  type="text" name="motheroccupation" ngModel #motheroccupation="ngModel" />
+            <input cFormControl maxlength="60" cTooltip="Eg:Engineer, Doctor, Clerk, Manager, Housewife etc." id="motheroccupation"  type="text" name="motheroccupation" ngModel #motheroccupation="ngModel" />
             <c-form-feedback [valid]="false">Please Provide mother's Occupation</c-form-feedback>
             <label cLabel for="motheroccupation">Mother's Occupation</label> 
           </c-col>
@@ -562,7 +562,7 @@
 
           <label  class="font-bold" style="font-size: larger;font-family: 'Times New Roman', Times, serif;" > Contact's Info</label>  
           <c-col cFormFloating class="mb-3" md="4">  
-            <textarea cFormControl id="address" required name="address" ngModel #address="ngModel" rows="3"></textarea>
+            <textarea cFormControl id="address" maxlength="100" required name="address" ngModel #address="ngModel" rows="3"></textarea>
             <c-form-feedback [valid]="false">Please Provide Address</c-form-feedback>
             <label cLabel for="address">House No., Village/Town and PO*</label> 
           </c-col>
@@ -814,31 +814,31 @@
               <label cLabel for="counry">Country*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="city" required type="text" name="city" ngModel #city="ngModel" />
+            <input cFormControl id="city" maxlength="30" required type="text" name="city" ngModel #city="ngModel" />
             <c-form-feedback [valid]="false">Please Provide City</c-form-feedback>
             <label cLabel for="city">City*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="state" required type="text" name="state" ngModel #state="ngModel" />
+            <input cFormControl id="state" maxlength="30" required type="text" name="state" ngModel #state="ngModel" />
             <c-form-feedback [valid]="false">Please Provide State</c-form-feedback>
             <label cLabel for="state">State*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="pincode" required type="number" name="pincode" ngModel #pincode="ngModel" min="0" max="999999" />
+            <input cFormControl id="pincode" required type="number" name="pincode" min="110001" max="260001" ngModel #pincode="ngModel"/>
             <c-form-feedback [valid]="false">Invalid Pin Code</c-form-feedback>
             <label cLabel for="pincode">Pin Code*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="mobilenumber" required type="tel" name="mobilenumber" pattern="[0-9]{10}" ngModel #mobilenumber="ngModel" />
+            <input cFormControl id="mobilenumber" maxlength="10" required type="tel" name="mobilenumber" pattern="[0-9]{10}" ngModel #mobilenumber="ngModel" />
             <c-form-feedback [valid]="false">Invalid Mobile Number</c-form-feedback>
             <label cLabel for="mobilenumber">Mobile Number*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="mobilenumber1"  type="tel" name="mobilenumber1" pattern="[0-9]{10}" ngModel #mobilenumber1="ngModel"  />
+            <input cFormControl id="mobilenumber1" maxlength="10" type="tel" name="mobilenumber1" pattern="[0-9]{10}" ngModel #mobilenumber1="ngModel"  />
             <label cLabel for="mobilenumber1">Mobile Number (Optional)</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="email" required type="email" name="email"  size="30" ngModel #email="ngModel" />
+            <input cFormControl id="email" required type="email" name="email"  maxlength="30" ngModel #email="ngModel" />
             <c-form-feedback [valid]="false">Invalid Email</c-form-feedback>
             <label cLabel for="email">Email*</label> 
           </c-col>
@@ -850,7 +850,6 @@
 
        <label class="font-semibold" >Year and class in which admission is desired*</label>
        <c-col cFormFloating class="mb-3" md="4">
-        
         <select id="class" required name="class" ngModel #class="ngModel" cSelect>
             <option>Kinder Garten</option>
             <option value="1">L.K.G</option>
@@ -870,6 +869,7 @@
           </select>
         <label cLabel for="class">Class*</label> 
       </c-col>
+
 
 
         

@@ -42,5 +42,6 @@ export class EmployeeComponent {
     console.log('Reset... 1');
   }
 
+  anio:number= new Date().getFullYear();
 
 }

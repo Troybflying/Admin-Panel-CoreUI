@@ -16,16 +16,13 @@ export class LoginComponent {
 
  onSubmit(logindata:NgForm){   
   console.log(logindata.value);
-   
-   
-
   if(logindata.value.email=="abhi@gmail.com" && logindata.value.pass=="123"){
     sessionStorage.setItem('isLoggedIn','true'); 
-    this.router.navigateByUrl('/dashboard')
+    this.router.navigateByUrl('/dashboard');
   }
   else{
     sessionStorage.setItem('isLoggedIn','false');
-    alert("Wrong Email or Password")
+    alert("Wrong Email or Password");
   }
 }
 

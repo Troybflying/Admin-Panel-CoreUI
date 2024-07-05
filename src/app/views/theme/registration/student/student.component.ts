@@ -6,7 +6,8 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
   CardBodyComponent, FormControlDirective, FormDirective, FormLabelDirective, FormSelectDirective,
    FormCheckComponent, FormCheckInputDirective, FormCheckLabelDirective, ButtonDirective, ColDirective,
     InputGroupComponent, InputGroupTextDirective,FormFeedbackComponent,ListGroupDirective,
-    ListGroupItemDirective,FormFloatingDirective,GutterDirective } from '@coreui/angular';
+    ListGroupItemDirective,FormFloatingDirective,GutterDirective, 
+    TooltipDirective} from '@coreui/angular';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
     FormDirective, FormLabelDirective, FormSelectDirective, FormCheckComponent, FormCheckInputDirective,
      FormCheckLabelDirective, ButtonDirective, ColDirective, InputGroupComponent, InputGroupTextDirective,
      FormFeedbackComponent, ListGroupDirective, ListGroupItemDirective,
-      FormFloatingDirective, NgStyle, GutterDirective],
+      FormFloatingDirective, NgStyle, GutterDirective,TooltipDirective],
 
   templateUrl: './student.component.html',
   styleUrl: './student.component.scss'
@@ -44,6 +45,8 @@ export class StudentComponent implements OnInit{
     this.customStylesValidated = false;
     console.log('Reset... 1');
   }
+
+   anio:number= new Date().getFullYear();
 
 
 }
