@@ -4,15 +4,16 @@ import { inject } from '@angular/core';
 export const authGuard: CanActivateFn = (route, state) => {
 
   const _router=inject(Router);
+  debugger;
 
-  let isloggedIn=sessionStorage.getItem("isloggedIn");
-  if(isloggedIn=='false'){
+  let sessionData=sessionStorage.getItem('isLoggedIn');
+  if(sessionData == 'false'){
     alert("Invalid Username or Password");
     _router.navigateByUrl('/login');
     return false;
   }
-
-
-  
-  return true;
+  else{
+    
+    return true;
+  }
 };

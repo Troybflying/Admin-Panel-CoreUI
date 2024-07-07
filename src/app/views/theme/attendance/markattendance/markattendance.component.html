@@ -72,15 +72,15 @@
               </thead>
               <tbody>             
                   @for(item of students; track $index){
-                    <tr [cTableColor]="colorRow(attendanceData['1'])">
+                    <tr [cTableColor]="colorRow(attendanceData[item.id])">
                       <th scope="row">{{item.id}}</th>
                       <td>{{item.name}}</td>
                       <td>{{item.roll_no}}</td>
                       <td>
-                        <input type="radio" name={{item.id}} value="present"  required [(ngModel)]="attendanceData['1']" />
+                        <input type="radio" name={{item.id}} value="present"  required [(ngModel)]="attendanceData[item.id]" />
                       </td>
                       <td>
-                      <input type="radio" name={{item.id}} value="absent" required [(ngModel)]="attendanceData['1']" />
+                      <input type="radio" name={{item.id}} value="absent" required [(ngModel)]="attendanceData[item.id]" />
                     </td>
                   </tr>
                 }          

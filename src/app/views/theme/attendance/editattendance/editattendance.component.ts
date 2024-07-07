@@ -17,9 +17,27 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
 })
 export class EditattendanceComponent {
 
+  enableState : { [key: string]: string } = {
+    '1' : 'true',
+    '2' : 'true',
+    '3' : 'true',
+    '4' : 'true',
+  };
+
+  editButton(event:any){
+  this.enableState[event.target.id]=this.enableState[event.target.id]==='true'?'false' :'true'  ; 
+   
+    
+    console.log(event.target.id);
+    console.log(typeof(event.target.id));
+    
+  }
+
   attendanceData: { [key: string]: string } = {
     '1' : 'present',
-    '2' : 'present'
+    '2' : 'present',
+    '3' : 'present',
+    '4' : 'present',
   };
 
   onSubmit(attendancedata:NgForm){
@@ -65,7 +83,7 @@ export class EditattendanceComponent {
       "roll_no":"03"
     },
     {
-      "id":'3',
+      "id":'4',
       "name":"drew",
       "roll_no":"04"
     }

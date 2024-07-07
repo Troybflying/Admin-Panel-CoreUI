@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes, mapToCanActivateChild } from '@angular/router';
 import { DefaultLayoutComponent } from './layout';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -7,25 +7,26 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
+  
 
   {path:'',redirectTo:'/login', pathMatch:'full'},
   {path:'login',component:LoginComponent,title:'login'},
   {path:'forgot-password',component:ForgotPasswordComponent,title:'forgot-password'},
   {path:'signup',component:SignupComponent,title:'signup'},
-  
  
   {
     path: '',
     component: DefaultLayoutComponent,
     data: {
       title: 'Home',
-     // canActivate:[authGuard]
+     canActivate:[authGuard]
     },
     children: [
       {
         path: '',
         redirectTo: 'dashboard',
-        pathMatch: 'full'
+        pathMatch: 'full',
+        
       },
       {
         path: 'dashboard',
@@ -66,11 +67,7 @@ export const routes: Routes = [
       {
         path: 'pages',
         loadChildren: () => import('./views/pages/routes').then((m) => m.routes)
-      },     
-      {
-        path: 'pages',
-        loadChildren: () => import('./pages/routes').then((m) => m.routes)
-      }  
+      }       
     ]
   },
   {

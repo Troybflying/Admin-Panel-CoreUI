@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, TableDirective, TableColorDirective, TableActiveDirective, BorderDirective, AlignDirective, FormDirective, FormLabelDirective, FormControlDirective, FormFeedbackComponent, InputGroupTextDirective, InputGroupComponent, ListGroupItemDirective, ListGroupDirective, ButtonDirective, FormCheckLabelDirective, FormCheckInputDirective, FormCheckComponent, FormSelectDirective, ButtonModule } from '@coreui/angular';
 import { RouterLink } from '@angular/router';
+import { each } from 'chart.js/dist/helpers/helpers.core';
+import { forEach } from 'lodash-es';
 
 
 
@@ -23,9 +25,16 @@ export class MarkattendanceComponent {
   constructor(private router: Router) {}
 
   attendanceData: { [key: string]: string } = {
-    '1' : 'present',
-    '2' : 'present'
+  
   };
+  onInit(){
+    for (const items of this.students) {
+      this.attendanceData[items.id]='present'
+      console.log(items.id);
+      
+
+    }
+  }
  
 onSubmit(attendancedata:NgForm){
   if(attendancedata.valid){   
@@ -83,7 +92,7 @@ students=[
     "roll_no":"03"
   },
   {
-    "id":'3',
+    "id":'4',
     "name":"drew",
     "roll_no":"04"
   }

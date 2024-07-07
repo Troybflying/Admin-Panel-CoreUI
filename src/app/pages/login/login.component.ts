@@ -18,7 +18,7 @@ export class LoginComponent {
   console.log(logindata.value);
   if(logindata.value.email=="abhi@gmail.com" && logindata.value.pass=="123"){
     sessionStorage.setItem('isLoggedIn','true'); 
-    this.router.navigateByUrl('/dashboard');
+   this.router.navigateByUrl('/dashboard');
   }
   else{
     sessionStorage.setItem('isLoggedIn','false');

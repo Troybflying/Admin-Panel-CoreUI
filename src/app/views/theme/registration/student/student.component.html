@@ -48,7 +48,7 @@
             <label cLabel for="fathername">Father's Name*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl cTooltip="Eg:Engineer, Doctor, Clerk, Manager etc." id="fatheroccupation" maxlength="60"  type="text" name="fatheroccupation" ngModel #fatheroccupation="ngModel"/>
+            <input cFormControl cTooltip="Eg : Engineer, Doctor, Clerk, Manager etc." id="fatheroccupation" maxlength="60"  type="text" name="fatheroccupation" ngModel #fatheroccupation="ngModel"/>
             <c-form-feedback [valid]="false">Please Provide Father's Occupation</c-form-feedback>
             <label cLabel for="fatheroccupation"> Father's Occupation </label> 
           </c-col>
@@ -306,7 +306,7 @@
             <label cLabel for="mothername">Mother's Name*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl maxlength="60" cTooltip="Eg:Engineer, Doctor, Clerk, Manager, Housewife etc." id="motheroccupation"  type="text" name="motheroccupation" ngModel #motheroccupation="ngModel" />
+            <input cFormControl maxlength="60" cTooltip="Eg : Engineer, Doctor, Clerk, Manager, Housewife etc." id="motheroccupation"  type="text" name="motheroccupation" ngModel #motheroccupation="ngModel" />
             <c-form-feedback [valid]="false">Please Provide mother's Occupation</c-form-feedback>
             <label cLabel for="motheroccupation">Mother's Occupation</label> 
           </c-col>
@@ -824,7 +824,7 @@
             <label cLabel for="state">State*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="pincode" required type="number" name="pincode" min="110001" max="260001" ngModel #pincode="ngModel"/>
+            <input cFormControl id="pincode" required type="number" name="pincode" maxlength="6" min="110001" max="260001" ngModel #pincode="ngModel"/>
             <c-form-feedback [valid]="false">Invalid Pin Code</c-form-feedback>
             <label cLabel for="pincode">Pin Code*</label> 
           </c-col>
