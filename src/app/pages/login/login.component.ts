@@ -1,12 +1,16 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { ButtonDirective, CardBodyComponent, CardComponent, CardGroupComponent, ColComponent, ContainerComponent, FormControlDirective, FormDirective, InputGroupComponent, InputGroupTextDirective, RowComponent, TextColorDirective } from '@coreui/angular';
+import { IconDirective } from '@coreui/icons-angular';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink,FormsModule,CommonModule,ReactiveFormsModule],
+  imports: [RouterLink,FormsModule,CommonModule,ReactiveFormsModule,ContainerComponent, RowComponent, ColComponent,
+     CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent,
+      InputGroupTextDirective, IconDirective, FormControlDirective, ButtonDirective, NgStyle],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
