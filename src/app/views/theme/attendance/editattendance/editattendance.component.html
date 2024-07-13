@@ -27,38 +27,21 @@
                         <td>{{item.name}}</td>
                         <td>{{item.roll_no}}</td>
                         <td>
-                          <input type="radio" name={{item.id}} value="present" [disabled]="enableState[item.id]" required [(ngModel)]="attendanceData[item.id]" />
+                          <input cFormCheckInput type="radio" style="border-color: green;" name={{item.id}} value="present"  [disabled]="enableState[item.id]" required [(ngModel)]="attendanceData[item.id]" />
                         </td>
                         <td>
-                        <input type="radio" name={{item.id}} value="absent" required [(ngModel)]="attendanceData[item.id]" />
+                        <input cFormCheckInput type="radio" style="border-color: maroon;" name={{item.id}} value="absent" required [(ngModel)]="attendanceData[item.id]" />
                       </td>
                       <td>
                         <button cButton type="button" id={{item.id}} (click)="editButton($event)" color="info" shape="rounded-pill" name='edit' >Edit</button>
                     </td>
                     <td>
-                        <textarea cFormControl id="commemt" maxlength="100"  required name="comment" ngModel #comment="ngModel"></textarea>
+                        <textarea cFormControl id="commemt{{item.id}}" maxlength="100" [disabled]="enableState[item.id]" required name="comment{{item.id}}" ngModel #comment="ngModel"></textarea>
                     </td>
                     </tr>
                   }       
                     
-                      <!--  <tr [cTableColor]="colorRow(attendanceData['1'])">
-                          <th scope="row">1</th>
-                          <td>Andy</td>
-                          <td>01</td>
-                          <td>
-                            <input type="radio" id="1" name=1 value="present" [disabled]="enableState['1']"  required [(ngModel)]="attendanceData['1']" />
-                          </td>
-                          <td>
-                          <input type="radio" id="1" name=1 value="absent" required [(ngModel)]="attendanceData['1']" />
-                        </td>
-                        <td>
-                            <button cButton type="button" id="1" (click)="editButton($event)" color="info" shape="rounded-pill" name='edit' >Edit</button>
-                        </td>
-                        <td>
-                            <textarea cFormControl id="comment" maxlength="100"  required name="comment" ngModel #comment="ngModel"></textarea>
-                        </td>
-                      </tr>
-                    -->
+                      
                         
                               
                   </tbody>

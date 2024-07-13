@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, TableDirective, TableColorDirective, TableActiveDirective, BorderDirective, AlignDirective, FormDirective, FormLabelDirective, FormControlDirective, FormFeedbackComponent, InputGroupTextDirective, InputGroupComponent, ListGroupItemDirective, ListGroupDirective, ButtonDirective, FormCheckLabelDirective, FormCheckInputDirective, FormCheckComponent, FormSelectDirective, ButtonModule } from '@coreui/angular';
 import { RouterLink } from '@angular/router';
-import { each } from 'chart.js/dist/helpers/helpers.core';
-import { forEach } from 'lodash-es';
 
 
 
@@ -16,7 +14,7 @@ import { forEach } from 'lodash-es';
     TableDirective, TableColorDirective, TableActiveDirective, BorderDirective, AlignDirective, FormsModule, 
     FormDirective, FormLabelDirective, FormControlDirective, FormFeedbackComponent, InputGroupComponent,
      InputGroupTextDirective, FormSelectDirective, FormCheckComponent, FormCheckInputDirective, FormCheckLabelDirective,
-      ButtonDirective, ListGroupDirective,ListGroupItemDirective,CommonModule,ButtonDirective,RouterLink],
+      ButtonDirective, ListGroupDirective,ListGroupItemDirective,CommonModule,ButtonDirective,RouterLink,ReactiveFormsModule],
   templateUrl: './markattendance.component.html',
   styleUrl: './markattendance.component.scss'
 })
@@ -25,6 +23,10 @@ export class MarkattendanceComponent {
   constructor(private router: Router) {}
 
   attendanceData: { [key: string]: string } = {
+    '1' : 'present',
+    '2' : 'present',
+    '3' : 'present',
+    '4' : 'present',
   
   };
   onInit(){
@@ -41,7 +43,7 @@ onSubmit(attendancedata:NgForm){
     let cnf=confirm("Submit Attendance ??");
     if(cnf == true){
       console.log(attendancedata.value);
-      this.router.navigateByUrl('/theme/editattendance');
+      this.router.navigateByUrl('/theme/successpage');
     }
     else{
       console.log("False");

@@ -54,6 +54,13 @@ export const routes: Routes = [
       data: {
         title: 'Edit Attendance'
       }
+    },
+    {
+      path: 'successpage',
+      loadComponent: () => import('./attendance/successpage/successpage.component').then(m => m.SuccesspageComponent),
+      data: {
+        title: 'Success Page'
+      }
     }
   ]
   },

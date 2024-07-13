@@ -8,6 +8,8 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
     InputGroupComponent, InputGroupTextDirective,FormFeedbackComponent,ListGroupDirective,
     ListGroupItemDirective,FormFloatingDirective,GutterDirective, 
     TooltipDirective} from '@coreui/angular';
+import { HttpserviceService } from '../../../../httpservice.service';
+
 
 
 @Component({
@@ -25,11 +27,12 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
 })
 export class StudentComponent implements OnInit{
 
+
   customStylesValidated = false;
   browserDefaultsValidated = false;
   tooltipValidated = false;
 
-  constructor () {}
+  constructor (private httpService: HttpserviceService) {}
 
   ngOnInit(): void { }
 
@@ -37,10 +40,18 @@ export class StudentComponent implements OnInit{
     this.customStylesValidated = true;
     console.log(studentdata.value);
     if(studentdata.valid){
-      alert("Registration Sucessfull !!");
+      this.httpService.registerStudent(studentdata.value).subscribe(
+        response => {
+          
+          console.log('Response:', response);
+        },
+        error => {
+          console.error('Error:', error);
+        }
+      );
     }
-
   }
+
   onReset() {
     this.customStylesValidated = false;
     console.log('Reset... 1');

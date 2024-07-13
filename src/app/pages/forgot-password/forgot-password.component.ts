@@ -12,7 +12,6 @@ import { RouterLink } from '@angular/router';
 export class ForgotPasswordComponent {
 
   reg(resetData:NgForm){  
-   
     console.log(resetData.value);  
    }
    

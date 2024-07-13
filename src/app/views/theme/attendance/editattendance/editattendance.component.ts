@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, TableDirective, TableColorDirective, TableActiveDirective, BorderDirective, AlignDirective, FormDirective, FormLabelDirective, FormControlDirective, FormFeedbackComponent, InputGroupTextDirective, InputGroupComponent, ListGroupItemDirective, ListGroupDirective, ButtonDirective, FormCheckLabelDirective, FormCheckInputDirective, FormCheckComponent, FormSelectDirective, ButtonModule } from '@coreui/angular';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,11 +12,13 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
     TableDirective, TableColorDirective, TableActiveDirective, BorderDirective, AlignDirective, FormsModule, 
     FormDirective, FormLabelDirective, FormControlDirective, FormFeedbackComponent, InputGroupComponent,
      InputGroupTextDirective, FormSelectDirective, FormCheckComponent, FormCheckInputDirective, FormCheckLabelDirective,
-      ButtonDirective, ListGroupDirective,ListGroupItemDirective,CommonModule,ButtonDirective],
+      ButtonDirective, ListGroupDirective,ListGroupItemDirective,CommonModule,ButtonDirective,ReactiveFormsModule],
   templateUrl: './editattendance.component.html',
   styleUrl: './editattendance.component.scss'
 })
 export class EditattendanceComponent {
+
+  constructor(private router: Router) {}
 
   enableState : { [key: string]: string } = {
     '1' : 'true',
@@ -43,7 +46,15 @@ export class EditattendanceComponent {
   onSubmit(attendancedata:NgForm){
     if(attendancedata.valid){   
       let cnf=confirm("Submit Attendance ??");
-      const abc = cnf==true ? console.log(attendancedata.value):console.log("False");
+      if(cnf==true){
+        console.log(attendancedata.value);
+        this.router.navigateByUrl('theme/successpage');
+      }
+      else{
+        console.log('Invalid');
+        
+      }
+
     }
     else{
       alert("Check Again"); 

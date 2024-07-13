@@ -23,9 +23,9 @@
 
 </head>
 
-<body style="background-color: beige;">
+<body>
 
-    <div class="container">
+    <div class="container" >
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
@@ -36,11 +36,11 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block"><img height="450px" width="350px" src="https://images.pexels.com/photos/3844788/pexels-photo-3844788.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" ></div>
+                            <div class="col-lg-6 d-none d-lg-block"><img  src="./assets/LRD_Logo.svg" ></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login!</h1>
+                                        <h1 style="font: size 3xl;" class="h4 text-gray-900 mb-4"><strong>Login!</strong></h1>
                                     </div>
                                     <form class="user" #logindata="ngForm" (ngSubmit)="onSubmit(logindata)">
                                         <div class="form-group">
@@ -55,21 +55,17 @@
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
+                                                <label class="custom-control-label" for="customCheck"><strong>Remember Me</strong></label>
                                             </div>
                                         </div>
-                                        <input type="submit" value="Login" [disabled]="logindata.invalid" class="btn btn-primary btn-user btn-block">
+                                        <input type="submit" value="Login" style="background-color: maroon;color: white;" [disabled]="logindata.invalid" class="btn btn-user btn-block">
                                             
                                         
                                      
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" routerLink="/forgot-password">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" routerLink="/signup">Create an Account!</a>
+                                        <a class="small font-bold" routerLink="/forgot-password">Forgot Password?</a>
                                     </div>
                                 </div>
                             </div>
@@ -81,17 +77,7 @@
 
         </div>
 
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    </div> 
 
 </body>
 
