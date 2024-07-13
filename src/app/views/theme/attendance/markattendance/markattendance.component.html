@@ -5,7 +5,7 @@
       
         
           <form #searchdata="ngForm" (ngSubmit)="onSearch(searchdata)" cForm>
-            <div class="flex space-x-2">
+            <div class="flex space-x-4">
             <c-col cFormFloating class="mb-3" md="4">
         
               <select id="class" required name="class" placeholder="Select Class" ngModel #class="ngModel" cSelect>
@@ -35,19 +35,9 @@
               </select>
               <label cLabel>Select Section</label>    
             </c-col>
-            <c-col cFormFloating class="mb-3" md="4">   
-              <select id="subject" required name="subject" aria-label="Select Subject" ngModel #subject="ngModel" cSelect>
-                <option value="Sub 1">Sub 1</option>
-                <option value="Sub 2">Sub 2</option>
-                <option value="Sub 3">Sub 3</option>  
-                <option value="Sub 4">Sub 4</option>  
-                <option value="Sub 5">Sub 5</option>  
-              </select>
-              <label cLabel>Select Subject</label>    
-            </c-col>
-          </div>
-          <div class="flex justify-center items-center">
-            <button cButton type="submit"  >Search</button>
+            <div>
+              <button cButton type="submit" style="background-color:maroon;"  >Search</button>
+            </div>
           </div>
           </form>
         
@@ -85,11 +75,9 @@
               </tbody>
             </table>
             <div class="flex justify-center item-centre mt-4" >
-              <button cButton type="submit" [disabled]="attendancedata.invalid"  colors="success">Submit</button>
+              <button cButton type="submit" [disabled]="attendancedata.invalid"  style="background-color:maroon;">Submit</button>
           </div>
-          </form>
-          
-        
+          </form> 
       </c-card-body>
     </c-card>
   </c-col>

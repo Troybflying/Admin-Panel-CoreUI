@@ -1,6 +1,6 @@
 <!--<c-header class="mb-4 d-print-none" position="sticky">-->
 <ng-container>
-  <c-container [fluid]="true" class="border-bottom px-4">
+  <c-container [fluid]="true" class="border-bottom px-4"  style="background-color: rgb(121, 2, 2);">
     <button
       [cSidebarToggle]="sidebarId"
       cHeaderToggler
@@ -8,29 +8,29 @@
       toggle="visible"
       style="margin-inline-start: -14px;"
     >
-      <svg cIcon name="cilMenu" size="lg"></svg>
+      <svg cIcon name="cilMenu" size="xl"></svg> 
     </button>
     <c-header-nav class="d-none d-md-flex">
       <c-nav-item>
-        <a cNavLink routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        <a cNavLink routerLink="/dashboard" routerLinkActive="active"><strong>Dashboard</strong></a>
       </c-nav-item>
       <c-nav-item>
-        <a cNavLink routerLink="/users" routerLinkActive="active">Users</a>
+        <a cNavLink routerLink="/users" routerLinkActive="active"><strong>Users</strong></a>
       </c-nav-item>
       <c-nav-item>
-        <a cNavLink routerLink="/pages/contactus" routerLinkActive="active">Contact Us</a>
+        <a cNavLink routerLink="/pages/contactus" routerLinkActive="active"><strong>Contact Us</strong></a>
       </c-nav-item>
     </c-header-nav>
 
     <c-header-nav class="d-none d-md-flex ms-auto ">
       <a cNavLink>
-        <svg cIcon class="my-1" name="cilBell" size="lg"></svg>
+        <svg cIcon class="my-1" name="cilBell" size="xl"></svg>
       </a>
       <a cNavLink>
-        <svg cIcon class="my-1" name="cilList" size="lg"></svg>
+        <svg cIcon class="my-1" name="cilList" size="xl"></svg>
       </a>
       <a cNavLink>
-        <svg cIcon class="my-1" name="cilEnvelopeOpen" size="lg"></svg>
+        <svg cIcon class="my-1" name="cilEnvelopeOpen" size="xl"></svg>
       </a>
     </c-header-nav>
 
@@ -60,7 +60,7 @@
     <button [caret]="false" cDropdownToggle class="py-0 pe-0">
       <c-avatar
         shape="rounded-1"
-        [size]="'md'"
+        [size]="'lg'"
         src="./assets/images/avatars/8.jpg"
         status="success"
         textColor="primary"
@@ -160,7 +160,7 @@
 <ng-template #themeDropdown>
   <c-dropdown alignment="end" variant="nav-item">
     <button [caret]="false" cDropdownToggle>
-      <svg cIcon [name]="icons()" size="lg"></svg>
+      <svg cIcon [name]="icons()" size="xl"></svg>
     </button>
     <div cDropdownMenu>
       @for (mode of colorModes; track mode.name) {

@@ -4,7 +4,7 @@
       
         
         <form #searchdata="ngForm" (ngSubmit)="onSearch(searchdata)" cForm>
-          <div class="flex space-x-2">
+          <div class="flex space-x-4">
           <c-col cFormFloating class="mb-3" md="4">
       
             <select id="class" required name="class" placeholder="Select Class" ngModel #class="ngModel" cSelect>
@@ -36,7 +36,7 @@
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
             
-            <button cButton type="submit"  >Search</button>
+            <button cButton type="submit" style="background-color: maroon;"  >Search</button>
           </c-col>
         </div>
         </form>   

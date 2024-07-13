@@ -33,7 +33,7 @@
                         <input cFormCheckInput type="radio" style="border-color: maroon;" name={{item.id}} value="absent" required [(ngModel)]="attendanceData[item.id]" />
                       </td>
                       <td>
-                        <button cButton type="button" id={{item.id}} (click)="editButton($event)" color="info" shape="rounded-pill" name='edit' >Edit</button>
+                        <button cButton type="button" id={{item.id}} (click)="editButton($event)" style="background-color:maroon;" shape="rounded-pill" name='edit' >Edit</button>
                     </td>
                     <td>
                         <textarea cFormControl id="commemt{{item.id}}" maxlength="100" [disabled]="enableState[item.id]" required name="comment{{item.id}}" ngModel #comment="ngModel"></textarea>
@@ -47,7 +47,7 @@
                   </tbody>
                 </table>
                 <div class="flex justify-center item-centre mt-4" >
-                  <button cButton type="submit" [disabled]="attendancedata.invalid" colors="success">Submit</button>
+                  <button cButton type="submit" [disabled]="attendancedata.invalid" style="background-color:maroon;">Submit</button>
               </div>
               </form>
           </c-card-body>
