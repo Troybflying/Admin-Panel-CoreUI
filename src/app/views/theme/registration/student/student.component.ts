@@ -8,7 +8,7 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
     InputGroupComponent, InputGroupTextDirective,FormFeedbackComponent,ListGroupDirective,
     ListGroupItemDirective,FormFloatingDirective,GutterDirective, 
     TooltipDirective} from '@coreui/angular';
-import { HttpserviceService } from '../../../../httpservice.service';
+
 
 
 
@@ -21,7 +21,6 @@ import { HttpserviceService } from '../../../../httpservice.service';
      FormCheckLabelDirective, ButtonDirective, ColDirective, InputGroupComponent, InputGroupTextDirective,
      FormFeedbackComponent, ListGroupDirective, ListGroupItemDirective,
       FormFloatingDirective, NgStyle, GutterDirective,TooltipDirective],
-
   templateUrl: './student.component.html',
   styleUrl: './student.component.scss'
 })
@@ -32,7 +31,7 @@ export class StudentComponent implements OnInit{
   browserDefaultsValidated = false;
   tooltipValidated = false;
 
-  constructor (private httpService: HttpserviceService) {}
+  constructor () {}
 
   ngOnInit(): void { }
 
@@ -40,15 +39,10 @@ export class StudentComponent implements OnInit{
     this.customStylesValidated = true;
     console.log(studentdata.value);
     if(studentdata.valid){
-      this.httpService.registerStudent(studentdata.value).subscribe(
-        response => {
-          
-          console.log('Response:', response);
-        },
-        error => {
-          console.error('Error:', error);
-        }
-      );
+      console.log(studentdata.value);
+      
+
+      
     }
   }
 

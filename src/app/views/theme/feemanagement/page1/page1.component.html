@@ -1,1 +1,124 @@
-<p>page1 works!</p>
+<c-card class="mb-4">
+    <img class="drop-shadow-lg rounded-md" src="">
+</c-card>
+
+
+
+  
+<c-col xs="12">
+    <c-card class="mb-4">
+      <c-card-header ngPreserveWhitespaces>
+      
+        
+          <form #searchdata="ngForm" (ngSubmit)="onSubmit(searchdata)" cForm>
+            <div class="flex">
+            <c-col cFormFloating class="mb-3" md="4">
+            <div>    
+              <th><label>Sr.Number </label></th>
+              <tr>
+                <input cFormControl  id="sr.number"  maxlength="20" type="text" name="sr.number" ngModel #sr.number="ngModel" />
+              </tr>
+            <c-form-feedback [valid]="false"></c-form-feedback>
+            </div>
+            
+            <c-col cFormFloating class="mb-3" md="4"></c-col>
+            <div>
+              
+              <tr>
+                <button cButton type="submit" style="background-color:maroon;"  >Search</button>
+              </tr>
+            </div>
+          </c-col>
+          </div>
+          </form>
+        
+      </c-card-header>
+      <c-card-body>
+        <form #feedeatails="ngForm" (ngSubmit)="onSubmit(feedeatails)" [validated]="true" cForm>
+            <table cTable>
+              <thead>
+                <tr>
+                    <th scope="col">Addmission No.</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Father Name</th>
+                    <th scope="col">class</th>
+                    <th scope="col">Roll Number</th>
+                    <th scope="col">Session</th> 
+                  </tr>
+              </thead>
+              <tbody>
+                @for(item of student; track $index){
+                <tr>
+                    <td>{{item.addmission}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.father}}</td>
+                    <td>{{item.class}}</td>
+                    <td>{{item.roll}}</td>
+                    <td>{{item.session}}</td>
+                </tr>    
+              }
+              </tbody>
+            </table>
+
+            <table cTable >
+            
+                <thead>
+                  <tr>
+                    <th>Sno</th>
+                    <th>Type</th>
+                    <th>Last Date</th>
+                    <th>Due Amount</th>
+                    <th>Fine</th>
+                    <th>Balance</th>
+                    <th>Pay</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let student of students; let i = index">
+                    <td>{{ student.Sno }}</td>
+                    <td>{{ student.type }}</td>
+                    <td>{{ student.lastdate }}</td>
+                    <td>{{ student.DueAmount }}</td>
+                    <td>{{ student.Fine }}</td>
+                    <td>{{ student.Balance }}</td>
+                    <td>
+                      <input cFormCheckInput type="checkbox" [checked]="student.checked" (change)="onCheckboxChange($event, i)" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="flex justify-center items-center">
+                <c-col cFormFloating class="mb-3" md="4">
+                  <div>
+                    <th><label>Total Amount </label></th>
+                    <tr>
+                      <input cFormControl  id="totalamount" [value]="textBoxValue" maxlength="30" type="text" name="totalamount"  [(ngModel)]="textBoxValue" />
+                  </tr>
+                 </div>
+              </c-col>
+              <c-col cFormFloating class="mb-3" md="4">
+                <div>
+                  <th><label>UTR.NO </label></th>
+                  <tr>
+                    <input cFormControl  id="utr"  maxlength="30" type="text" name="utr" ngModel #utr="ngModel" />      
+                </tr>
+                 </div>
+              </c-col>
+              <c-col cFormFloating class="mb-3" md="4">
+                <div>
+                  <th><label>Cash</label></th>
+                        <tr>
+                          <input cFormControl  id="cash"  maxlength="30" type="text" name="cash" ngModel #cash="ngModel" />                   
+                      </tr>
+                 </div>
+                </c-col>
+              </div>
+              <div class="flex justify-center item-centre mt-4" >
+                <button cButton type="submit"   style="background-color:maroon;">Submit</button>
+            </div>
+             </form> 
+            </c-card-body>
+    </c-card>
+  </c-col>
+

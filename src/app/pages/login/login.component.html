@@ -29,32 +29,31 @@
                                     <div class="text-center">
                                         <h1 style="font: size 3xl;" class="h4 mb-4"><strong>Login!</strong></h1>
                                     </div>
-                                    <form class="user" #logindata="ngForm" (ngSubmit)="onSubmit(logindata)">
+                                    <form action="#" >
                                         <div class="form-group">
                                             <c-input-group class="mb-3">
                                                 <span cInputGroupText>
                                                   <svg cIcon name="cilUser"></svg>
                                                 </span>
-                                                <input autoComplete="username" name="email" cFormControl required placeholder="Email" ngModel #email="ngModel" />
+                                                <input autoComplete="Email" name="Email.Id" [(ngModel)]="loginObj.EmailId" cFormControl required placeholder="Email" />
                                               </c-input-group>
                                               <c-input-group class="mb-4">
                                                 <span cInputGroupText>
                                                   <svg cIcon name="cilLockLocked"></svg>
                                                 </span>
                                                 <input
-                                                  autoComplete="current-password"
+                                                  autoComplete="Password"
                                                   cFormControl
-                                                  name="pass"
+                                                  name="Password"
                                                   placeholder="Password"
                                                   type="password"
                                                   required
-                                                  ngModel
-                                                  #pass="ngModel"
+                                                  [(ngModel)]="loginObj.Password"
                                                 />
                                               </c-input-group>
                                         </div>
                                         <div class="flex justify-center items-center">
-                                            <input type="submit" value="Login" style="background-color: maroon;color: white;" [disabled]="logindata.invalid" class="btn btn-user btn-block">
+                                            <input type="button" (click)="onLogin()" value="Login" style="background-color: maroon;color: white;"  class="btn btn-user btn-block">
                                         </div>         
                                     </form>
                                     <hr>                         

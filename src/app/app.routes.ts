@@ -1,10 +1,10 @@
-import { Routes, mapToCanActivateChild } from '@angular/router';
+import { Routes } from '@angular/router';
 import { DefaultLayoutComponent } from './layout';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
-import { authGuard } from './auth.guard';
+
 
 export const routes: Routes = [
   
@@ -19,7 +19,7 @@ export const routes: Routes = [
     component: DefaultLayoutComponent,
     data: {
       title: 'Home',
-     canActivate:[authGuard]
+   
     },
     children: [
       {
