@@ -1,6 +1,6 @@
 
 <c-card class="mb-4">
-  <img class="drop-shadow-lg rounded-md" src="">
+  <img class="drop-shadow-lg rounded-md" style="height:20rem;" src="./assets/school_image.jpg">
 </c-card>
 
 <!-- Registration Form-->
@@ -9,7 +9,6 @@
       <c-card-body>
 
           <form #studentdata="ngForm"
-                (ngSubmit)="onSubmit(studentdata)"
                 [validated]="customStylesValidated"
                 cForm
                 class="row g-3 needs-validation">
@@ -18,12 +17,12 @@
          <label  class="font-bold" style="font-size: larger;font-family: 'Times New Roman', Times, serif;" > Student's Info</label>  
                
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl  id="fname" required maxlength="30" type="text" name="fname" ngModel #fname="ngModel" />
+            <input cFormControl  id="fname" required maxlength="30" type="text" name="fname"  [(ngModel)]="StudentRegObj.fname" />
             <c-form-feedback [valid]="false">Please Provide First Name</c-form-feedback>
             <label cLabel for="fname">First Name*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="mname" maxlength="30" type="text" name="mname" ngModel #mname="ngModel" />
+            <input cFormControl id="mname" maxlength="30" type="text" name="mname" [(ngModel)]="StudentRegObj.mname" />
             <label cLabel for="mname">Middle Name</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
@@ -31,12 +30,12 @@
             <label cLabel for="lname">Last Name*</label> 
           </c-col>
           <c-col cFormFloating md="4">
-            <input cFormControl id="placeofbirth" maxlength="30" required type="text" name="placeofbirth" ngModel #placeofbirth="ngModel" />
+            <input cFormControl id="placeofbirth" maxlength="30" required type="text" name="placeofbirth" [(ngModel)]="StudentRegObj.lname" />
             <c-form-feedback [valid]="false">Please provide a valid Place.</c-form-feedback>
             <label cLabel for="placeofbirth">Place of Birth*</label> 
           </c-col>
           <c-col cFormFloating md="4">
-            <input cFormControl id="dob" required type="date" name="dob"  min=1950-12-31 max={{anio-3}}-12-31 ngModel #dob="ngModel" />
+            <input cFormControl id="dob" required type="date" name="dob"  min=1950-12-31 max={{anio-3}}-12-31 [(ngModel)]="StudentRegObj.dob" />
             <c-form-feedback [valid]="false">Please provide a valid D.O.B</c-form-feedback>
             <label cLabel for="dob">Date of Birth*</label> 
           </c-col>
@@ -44,17 +43,17 @@
           <label  class="font-bold" style="font-size: larger;font-family: 'Times New Roman', Times, serif;" > Parent's Info</label>  
           
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl  id="fathername" maxlength="60" required type="text" name="fathername" ngModel #fathername="ngModel" />
+            <input cFormControl  id="fathername" maxlength="60" required type="text" name="fathername" [(ngModel)]="StudentRegObj.fathername" />
             <c-form-feedback [valid]="false">Please Provide Father's Name</c-form-feedback>
             <label cLabel for="fathername">Father's Name*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl cTooltip="Eg : Engineer, Doctor, Clerk, Manager etc." id="fatheroccupation" maxlength="60"  type="text" name="fatheroccupation" ngModel #fatheroccupation="ngModel"/>
+            <input cFormControl cTooltip="Eg : Engineer, Doctor, Clerk, Manager etc." id="fatheroccupation" maxlength="60"  type="text" name="fatheroccupation" [(ngModel)]="StudentRegObj.fatheroccupation"/>
             <c-form-feedback [valid]="false">Please Provide Father's Occupation</c-form-feedback>
             <label cLabel for="fatheroccupation"> Father's Occupation </label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">  
-            <select id="fathernationality" required name="fathernationality" ngModel #fathernationality="ngModel" cSelect>
+            <select id="fathernationality" required name="fathernationality" [(ngModel)]="StudentRegObj.fathernationality" cSelect>
                 <option value="India" selected>India</option>
                 <option value="United States">United States</option>
                 <option value="Afghanistan">Afghanistan</option>
@@ -302,17 +301,17 @@
           </c-col>
           
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl  id="mothername" maxlength="60" required type="text" name="mothername" ngModel #mothername="ngModel" />
+            <input cFormControl  id="mothername" maxlength="60" required type="text" name="mothername" [(ngModel)]="StudentRegObj.mothername" />
             <c-form-feedback [valid]="false">Please Provide Mother's Name</c-form-feedback>
             <label cLabel for="mothername">Mother's Name*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">  
-            <input cFormControl maxlength="60" cTooltip="Eg : Engineer, Doctor, Clerk, Manager, Housewife etc." id="motheroccupation"  type="text" name="motheroccupation" ngModel #motheroccupation="ngModel" />
+            <input cFormControl maxlength="60" cTooltip="Eg : Engineer, Doctor, Clerk, Manager, Housewife etc." id="motheroccupation"  type="text" name="motheroccupation"[(ngModel)]="StudentRegObj.motheroccupation" />
             <c-form-feedback [valid]="false">Please Provide mother's Occupation</c-form-feedback>
             <label cLabel for="motheroccupation">Mother's Occupation</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">  
-            <select id="mothernationality" required name="mothernationality" ngModel #mothernationality="ngModel" cSelect>
+            <select id="mothernationality" required name="mothernationality" [(ngModel)]="StudentRegObj.mothernationality" cSelect>
                 <option selected>India</option>
                 <option value="United States">United States</option>
                 <option value="Afghanistan">Afghanistan</option>
@@ -556,19 +555,19 @@
             
               </select>
               <c-form-feedback [valid]="false">Please Provide Country</c-form-feedback>
-              <label cLabel for="fathernationality">Mother's Nationality*</label> 
+              <label cLabel for="mothernationality">Mother's Nationality*</label> 
           </c-col>
 
       <!--Contact info-->
 
           <label  class="font-bold" style="font-size: larger;font-family: 'Times New Roman', Times, serif;" > Contact's Info</label>  
           <c-col cFormFloating class="mb-3" md="4">  
-            <textarea cFormControl id="address" maxlength="100" required name="address" ngModel #address="ngModel" rows="3"></textarea>
+            <textarea cFormControl id="address" maxlength="100" required name="address" [(ngModel)]="StudentRegObj.address" rows="3"></textarea>
             <c-form-feedback [valid]="false">Please Provide Address</c-form-feedback>
             <label cLabel for="address">House No., Village/Town and PO*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">  
-            <select id="country" required name="country" ngModel #country="ngModel" cSelect>
+            <select id="country" required name="country" [(ngModel)]="StudentRegObj.country" cSelect>
                 <option selected>India</option>
                 <option value="United States">United States</option>
                 <option value="Afghanistan">Afghanistan</option>
@@ -815,31 +814,31 @@
               <label cLabel for="counry">Country*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="city" maxlength="30" required type="text" name="city" ngModel #city="ngModel" />
+            <input cFormControl id="city" maxlength="30" required type="text" name="city" [(ngModel)]="StudentRegObj.city" />
             <c-form-feedback [valid]="false">Please Provide City</c-form-feedback>
             <label cLabel for="city">City*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="state" maxlength="30" required type="text" name="state" ngModel #state="ngModel" />
+            <input cFormControl id="state" maxlength="30" required type="text" name="state" [(ngModel)]="StudentRegObj.state" />
             <c-form-feedback [valid]="false">Please Provide State</c-form-feedback>
             <label cLabel for="state">State*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="pincode" required type="number" name="pincode" maxlength="6" min="110001" max="260001" ngModel #pincode="ngModel"/>
+            <input cFormControl id="pincode" required type="number" name="pincode" maxlength="6" min="110001" max="260001" [(ngModel)]="StudentRegObj.pincode"/>
             <c-form-feedback [valid]="false">Invalid Pin Code</c-form-feedback>
             <label cLabel for="pincode">Pin Code*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="mobilenumber" maxlength="10" required type="tel" name="mobilenumber" pattern="[0-9]{10}" ngModel #mobilenumber="ngModel" />
+            <input cFormControl id="mobilenumber" maxlength="10" required type="tel" name="mobilenumber" pattern="[0-9]{10}" [(ngModel)]="StudentRegObj.mobilenumber" />
             <c-form-feedback [valid]="false">Invalid Mobile Number</c-form-feedback>
             <label cLabel for="mobilenumber">Mobile Number*</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="mobilenumber1" maxlength="10" type="tel" name="mobilenumber1" pattern="[0-9]{10}" ngModel #mobilenumber1="ngModel"  />
+            <input cFormControl id="mobilenumber1" maxlength="10" type="tel" name="mobilenumber1" pattern="[0-9]{10}" [(ngModel)]="StudentRegObj.mobilenumber1"  />
             <label cLabel for="mobilenumber1">Mobile Number (Optional)</label> 
           </c-col>
           <c-col cFormFloating class="mb-3" md="4">
-            <input cFormControl id="email" required type="email" name="email"  maxlength="30" ngModel #email="ngModel" />
+            <input cFormControl id="email" required type="email" name="email"  maxlength="30" [(ngModel)]="StudentRegObj.email" />
             <c-form-feedback [valid]="false">Invalid Email</c-form-feedback>
             <label cLabel for="email">Email*</label> 
           </c-col>
@@ -851,7 +850,7 @@
 
        <label class="font-semibold" >Year and class in which admission is desired*</label>
        <c-col cFormFloating class="mb-3" md="4">
-        <select id="class" required name="class" ngModel #class="ngModel" cSelect>
+        <select id="class" required name="class" [(ngModel)]="StudentRegObj._class" cSelect>
             <option>Kinder Garten</option>
             <option value="1">L.K.G</option>
             <option value="2">U.K.G</option>
@@ -877,7 +876,7 @@
    <!--Buttons-->        
             <c-col xs="12">
               <c-form-check>
-                <input cFormCheckInput id="invalidCheck" name="invalidCheck" required ngModel #invalidcheck="ngModel" type="checkbox" />
+                <input cFormCheckInput id="invalidCheck" name="invalidCheck" required [(ngModel)]="StudentRegObj.invalidCheck" type="checkbox" />
                 <label class="font-semibold" cFormCheckLabel for="invalidCheck">I Agree to the Terms and Conditions:*</label>
               </c-form-check>
               <c-form-feedback [valid]="false">Please fill this field.</c-form-feedback>
@@ -888,7 +887,7 @@
               and settle any other accounts promptly.
             </p>
             <c-col xs="12">
-              <button cButton [disabled]="" class="me-1" style="background-color:maroon;" type="submit">
+              <button cButton (click)="onSubmit()" class="me-1" style="background-color:maroon;" type="submit">
                 Submit
               </button>
               <button (click)="onReset()" cButton color="secondary" type="reset">

@@ -26,32 +26,86 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
 })
 export class StudentComponent implements OnInit{
 
+  StudentRegObj : StudentReg;
+
+ 
 
   customStylesValidated = false;
   browserDefaultsValidated = false;
   tooltipValidated = false;
 
-  constructor () {}
+  constructor () {
+    this.StudentRegObj = new StudentReg;
+  }
+
+
+  
 
   ngOnInit(): void { }
 
-  onSubmit(studentdata:NgForm) {
+  onSubmit() {
+    console.log(this.StudentRegObj);
+    
     this.customStylesValidated = true;
-    console.log(studentdata.value);
-    if(studentdata.valid){
-      console.log(studentdata.value);
-      
-
-      
-    }
+    
+    
   }
 
   onReset() {
     this.customStylesValidated = false;
     console.log('Reset... 1');
   }
+  
+   anio:number= new Date().getFullYear(); // used for getting current date and used in selecting DOB field.
 
-   anio:number= new Date().getFullYear();
+}
 
+export class StudentReg{
+     fname : string;
+     mname : string;
+     lname : string;
+     placeofbirth  : string;
+     dob : string;
+     fathername : string;
+     fatheroccupation : string;
+     fathernationality : string;
+     mothername : string;
+     motheroccupation : string;
+     mothernationality : string;
+     address : string;
+     country : string;
+     city : string;
+     state : string;
+     pincode : string;
+     mobilenumber : string;
+     mobilenumber1 : string;
+     email : string;
+     _class : string;
+     invalidCheck : string;
+
+     constructor ( ) {
+      this.fname = '';
+      this.mname = '';
+      this.lname = '';
+      this.placeofbirth = '';
+      this.dob = '';
+      this.fathername = '';
+      this.fatheroccupation = '';
+      this.fathernationality = '';
+      this.mothername = '';
+      this.motheroccupation = '';
+      this.mothernationality = '';
+      this.address = '';
+      this.country = '';
+      this.city = '';
+      this.state = '';
+      this.pincode = '';
+      this.mobilenumber ='';
+      this.mobilenumber1 = '';
+      this.email = '';
+      this._class = '';
+      this.invalidCheck = '';
+ 
+    }
 
 }

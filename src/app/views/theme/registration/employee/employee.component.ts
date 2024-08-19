@@ -21,20 +21,24 @@ import { RowComponent, ColComponent, TextColorDirective, CardComponent, CardHead
   styleUrl: './employee.component.scss'
 })
 export class EmployeeComponent {
+
+   EmployeeRegObj : EmployeeReg;
+  
   customStylesValidated = false;
   browserDefaultsValidated = false;
   tooltipValidated = false;
 
-  constructor () {}
+  constructor () { 
+    this.EmployeeRegObj = new EmployeeReg;
+  }
 
   ngOnInit(): void { }
 
-  onSubmit(employeedata:NgForm) {
+  onSubmit() {
     this.customStylesValidated = true;
-    console.log(employeedata.value);
-    if(employeedata.valid){
-      alert("Registration Sucessfull !!");
-    }
+    console.log(this.EmployeeRegObj);
+    
+   
 
   }
   onReset() {
@@ -43,5 +47,50 @@ export class EmployeeComponent {
   }
 
   anio:number= new Date().getFullYear();
+
+}
+export class EmployeeReg{
+
+    fname : string;
+     mname : string;
+     lname : string;
+     placeofbirth  : string;
+     dob : string;
+     martialstatus : string;
+     gender : string;
+     qualifications : string;
+     choosefile : string;
+     address : string;
+     country : string;
+     state : string;
+     city : string;
+     pincode : string;
+     mobilenumber : string;
+     mobilenumber1 : string;
+     email : string;
+     invalidCheck : string;
+
+     constructor ( ) {
+      this.fname = '';
+      this.mname = '';
+      this.lname = '';
+      this.placeofbirth = '';
+      this.dob = '';
+      this.martialstatus = '';
+      this.gender = '';
+      this.qualifications = '';
+      this.choosefile = '';
+      this.address = '';
+      this.country = '';
+      this.state = '';
+      this.city = '';
+      this.pincode = '';
+      this.mobilenumber ='';
+      this.mobilenumber1 = '';
+      this.email = '';
+      this.invalidCheck = '';
+ 
+    }
+
 
 }

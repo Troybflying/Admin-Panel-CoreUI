@@ -25,14 +25,17 @@ export class LoginComponent {
 
 
  onLogin(){  
-  this.router.navigateByUrl('dashboard');
+
   
-  this.http.post('https://freeapi.miniprojectideas.com/api/User/Login', this.loginObj).subscribe((res:any)=>{
-   if(res.result){
-      alert("Login Succesfull")
+  this.http.post('http://ec2-65-2-39-105.ap-south-1.compute.amazonaws.com:3000/be/Admin/login', this.loginObj).subscribe((res:any)=>{
+   
+    if(res){
+      console.log(res.token);
+      localStorage.setItem('loginToken', res.token);
+      this.router.navigateByUrl('dashboard');
     }
     else{
-      alert(res.message)
+      alert(res.message);
     }
   }) 
 
@@ -42,11 +45,11 @@ export class LoginComponent {
 
 export class Login {
   
-    EmailId: string;
-    Password: string;
+    email: string;
+    password: string;
     constructor ( ) {
-      this.EmailId='';
-      this.Password='';
+      this.email='';
+      this.password='';
 
     }
   
